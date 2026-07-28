@@ -1,5 +1,7 @@
 link: https://leetcode.com/problems/n-th-tribonacci-number/
 
+Memoization here for a simple
+T0 = 0, T1 = 1, T2 = 1, and Tn+3 = Tn + Tn+1 + Tn+2 for n >= 0.
 class Solution {
 public:
     int find(int n,vector<int> &dp){
