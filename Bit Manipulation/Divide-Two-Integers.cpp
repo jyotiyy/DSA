@@ -1,0 +1,28 @@
+link: https://leetcode.com/problems/divide-two-integers/description/
+The problem statement clearly specifies to not use *,/,% This makes us focus on Bit Manipulation
+Now Instead of subtracting divisor 1 time everytime ( TLE ) we will optimize by subtracting in powers of 2
+This reduces the tomecomplexity to O(log n) from O(n) ;)
+
+class Solution {
+public:
+    int divide(int dividend, int divisor) {
+        if(dividend == divisor) return 1;
+        if(dividend == INT_MIN && divisor == -1) return INT_MAX;
+        if(divisor == 1) return dividend;
+
+        int sign = (dividend < 0 ) ^ (divisor < 0) ? -1: 1;
+
+        long long n = abs((long long)dividend);
+        long long d = abs((long long)divisor);
+        int q = 0;
+        while(n >= d){
+            int p = 1;
+            while(n >= (d << p))p++;
+            p--;
+            q += (1 << p);
+            n-=(d<<p);
+        }
+        return (sign == -1)? -q: q;
+
+    }
+};
