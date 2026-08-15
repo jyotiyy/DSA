@@ -3,6 +3,9 @@ The problem statement clearly specifies to not use *,/,% This makes us focus on 
 Now Instead of subtracting divisor 1 time everytime ( TLE ) we will optimize by subtracting in powers of 2
 This reduces the tomecomplexity to O(log n) from O(n) ;)
 
+2^21 approx = 10^9.33
+now log(n) < out of bound
+
 class Solution {
 public:
     int divide(int dividend, int divisor) {
