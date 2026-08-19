@@ -1,5 +1,6 @@
 link: https://leetcode.com/problems/cinema-seat-allocation/?envType=daily-question&envId=2026-08-19
 
+
 class Solution {
 public:
     int maxNumberOfFamilies(int n, vector<vector<int>>& reservedSeats) {

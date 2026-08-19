@@ -2,6 +2,7 @@ link:https://leetcode.com/problems/minimum-path-sum/description/
 
 Simple condition for bottom up grid[i][j] = min(grid[i-1][j],grid[i][j-1]).However its also essential 
 to get the first row and first column updated when traversing across them .
+
 class Solution {
 public:
     int minPathSum(vector<vector<int>>& grid) {

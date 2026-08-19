@@ -5,6 +5,7 @@ makes it obvious to declare the answer as length of the array. However for the c
 zero removing one number from the complete list will again make the xor non-zero. 
 However if there are no non-zero elements in the array the answer will be 0, as it will not be possible
 to get any subarray with cumulative xor value 0
+
 class Solution {
 public:
     int longestSubsequence(vector<int>& nums) {
