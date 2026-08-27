@@ -1,0 +1,28 @@
+link: https://leetcode.com/problems/edit-distance/description/
+
+filhal smjh nahi aaya dhang se shaam tak samajhti hu
+
+class Solution {
+public:
+    int minDistance(string word1, string word2) {
+        int n = word1.size();
+        int m = word2.size();
+        vector<vector<int>> dp(n+1,vector<int>(m+1,0));
+        for(int i = 0; i <= n; i++) dp[i][0] = i;
+        for(int i = 0; i <= m; i++) dp[0][i] = i;
+        
+        /*Here dp[i][j] = as the minimum edit distance between the first i characters of word1 and the first j characters of word2*/
+        for(int i = 1; i <= n; i++){
+            for(int j = 1; j <= m; j++){
+                if(word1[i-1] == word2[j-1]){
+                    dp[i][j] = dp[i-1][j-1];
+                }else{
+                    dp[i][j] = 1+min({dp[i-1][j-1], //replace 
+                                    dp[i-1][j], //delete
+                                    dp[i][j-1]}); //insert
+                }
+            }
+        }
+        return dp[n][m];
+    }
+};
