@@ -2,6 +2,7 @@ link: https://leetcode.com/problems/decode-ways/
 
 The idea is simple either take 2 digits or 1 digit 
 
+
 class Solution {
 public:
     //dp[i] = number of ways to make the string i...n
