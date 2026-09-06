@@ -10,6 +10,8 @@ Now we start from index = 0 and s = ' '
                ad ae af bd be bf cd ce cf
 */
 
+basically take this or something else at every level 
+
 class Solution {
 public:
     map<int,string> tele = {
@@ -44,4 +46,39 @@ public:
         }
     }
 
+};
+
+class Solution {
+public:
+    vector<string> res;
+    map<int,string> tele = {
+           {2, "abc"},
+        {3, "def"},
+        {4, "ghi"},
+        {5, "jkl"},
+        {6, "mno"},
+        {7, "pqrs"},
+        {8, "tuv"},
+        {9, "wxyz"}
+    };
+    int n;
+    void backtrack(int ind,string cur,string digits){
+        if(ind == n){
+            res.push_back(cur);
+            return;
+        }
+        int curnum = digits[ind]-'0';
+        string curstr = tele[curnum];
+        for(int i = 0; i < curstr.size(); i++){
+            backtrack(ind+1,cur+curstr[i],digits); //take
+        }
+        return;
+    }
+    vector<string> letterCombinations(string digits) {
+        n = digits.size();
+        if(digits.empty()) return res;
+        string cur = "";
+        backtrack(0,cur,digits);
+        return res;
+    }
 };
