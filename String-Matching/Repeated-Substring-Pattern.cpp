@@ -1,5 +1,6 @@
 using hash function as sum of ascii values 
 inspired by rabin karp
+
 class Solution {
 public:
     bool repeatedSubstringPattern(string s) {
