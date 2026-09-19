@@ -1,0 +1,40 @@
+Segment trees are usually needed for range query problems and update problems where the array shall change over time 
+For a given array while solving a range problem the usual tc -> O(n)
+also updation takes O(1). In contrast when segment trees are used : Formation -> O(n)
+Range queries -> O(log n)
+Point Updation ->O(log n)
+Space = O(n)
+
+A. Range Query Problems 
+sum[l,r]
+update(index,val)
+Think of segment trees as 
+                    [0 ─── 7]
+                   /         \
+              [0 ─ 3]       [4 ─ 7]
+              /    \         /    \
+           [0-1] [2-3]   [4-5] [6-7]
+Each node represents a range of sequence 
+
+The pattern of problems to be solved for this is 
+1. Range Sum Query
+       ↓
+2. Point Update
+       ↓
+3. Range Minimum / Maximum
+       ↓
+4. Range GCD / XOR
+       ↓
+5. Counting / Frequency
+       ↓
+6. Lazy Propagation
+       ↓
+7. Range Add / Range Assignment
+       ↓
+8. Segment Tree + DP
+       ↓
+9. Coordinate Compression + Segment Tree
+       ↓
+10. Advanced interval / sweep-line problems
+
+Segment Tree = efficiently maintain information about intervals when you have many range queries and/or updates.
