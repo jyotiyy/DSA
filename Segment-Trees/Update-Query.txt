@@ -16,10 +16,7 @@ builded tree too
 updateSegTree(idx,val,0,0,n-1)-> call
 updateSgmentTree(idx,value,i,l,r){
     if(l == r){
-        if(l == idx){
-            segTree[i] = value;
-            
-        }
+        segTree[i] = value;
         return
 
     }
