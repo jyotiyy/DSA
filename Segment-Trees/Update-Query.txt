@@ -1,0 +1,35 @@
+Update Query:
+
+Suppose, 
+nums = [3,1,2,7]
+prefixSum = [3,4,6,13]
+
+Now if update(1,4) means updating the position 
+1 with value 4.This makes the change in nums a bit difficult
+NOW range sum is a bit difficult to find 
+O(n) to update the Prefix Sum
+
+We iterate over it find mid at every point and go in the direction 
+where we can find i . when we get that we update that value and its upper 
+builded tree too 
+
+updateSegTree(idx,val,0,0,n-1)-> call
+updateSgmentTree(idx,value,i,l,r){
+    if(l == r){
+        if(l == idx){
+            segTree[i] = value;
+            
+        }
+        return
+
+    }
+    mid = (l+r)/2
+    if(idx <= mid){ //left child
+        updateSegTree(idx,value,2*i+1,l,m)
+    }else{
+        updateSegTree(idx,value,2*i+2,m+1,r)
+    }
+    segTree[i] = segTree[2*i+1]+segTree[2*i+2]
+
+}
+

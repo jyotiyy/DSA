@@ -38,3 +38,25 @@ The pattern of problems to be solved for this is
 10. Advanced interval / sweep-line problems
 
 Segment Tree = efficiently maintain information about intervals when you have many range queries and/or updates.
+
+  SEGMENT TREE FORMATION 
+
+Approximately => 2*n Nodes in a segment trees
+Leaf Nodes-> n
+Internal Nodes -> n-1 
+TOTAL = 2*n 
+
+buildTree(i,l,r){
+       if(l == r){
+              segTree[i] = arr[l]
+              return
+       }
+       int m = (l+r)/2
+       
+       buildTree(2*i+1,l,m)
+       buildTree(2*i+2,m+1,r)
+       segTree[i] = segTree[2*i+1]+segTree[2*i+2]
+}
+
+Time Complexity : O(n)
+Space Complexity: O(log n)
