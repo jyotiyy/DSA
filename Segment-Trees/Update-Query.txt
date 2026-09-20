@@ -30,3 +30,16 @@ updateSgmentTree(idx,value,i,l,r){
 
 }
 
+Time complexity : O(log n)
+Cases Of Range Sum:
+1) Out of bound -> return 0
+if(l > end || r <  start) 
+2) Within the range entirely in [start,end]->return the value segTree[i]
+if( l >= start && r <= end ) return segTree[i]
+3) Overlapping is there : left iterate + right itereate
+
+return query(leftvalue)+query(rightvalue)
+
+
+CODE: 
+query(start,end,0,)
