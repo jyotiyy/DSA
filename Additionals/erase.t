@@ -1,0 +1,1 @@
+When we use erase for vectors all the elements after that index moves left 

@@ -13,7 +13,7 @@ public:
             return;
         }
         cur.push_back(cand[i]);
-        find(i,cur,cand);
+        find(i,cur,cand);// this idea of not adding +1 to i here is that we can take the same elment 
         cur.pop_back();
         find(i+1,cur,cand);
     }
